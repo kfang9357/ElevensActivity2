@@ -34,9 +34,13 @@ public class Deck {
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-        for (int i =0; i< ranks.length; i++)
-        {
-            cards.add();
+        this.size = (ranks.length * suits.length);
+        this.cards = new ArrayList<Card>();
+
+        for (int j =0;j<suits.length; j++ ) {
+            for (int i = 0; i < ranks.length; i++)
+                cards.add(new Card(ranks[i],suits[j],values[i]));
+            }
         }
     }
 
