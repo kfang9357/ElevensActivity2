@@ -34,11 +34,12 @@ public class Deck {
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-        this.size = (ranks.length * suits.length);
+        this.size = ranks.length;
         this.cards = new ArrayList<Card>();
 
         for (int j =0;j<suits.length; j++ ) {
             for (int i = 0; i < ranks.length; i++)
+            {
                 cards.add(new Card(ranks[i],suits[j],values[i]));
             }
         }
@@ -51,6 +52,12 @@ public class Deck {
      */
     public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        boolean empty = false;
+        if (size==0)
+        {
+            empty = true;
+        }
+        return empty;
     }
 
     /**
@@ -59,6 +66,7 @@ public class Deck {
      */
     public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        return size;
     }
 
     /**
@@ -74,9 +82,15 @@ public class Deck {
      * @return the card just dealt, or null if all the cards have been
      *         previously dealt.
      */
-    public Card deal() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-    }
+
+        public Card deal() {
+            /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+            if(this.isEmpty()!=true) {
+                size--;
+                return cards.get(size);
+            }
+            return null;
+        }
 
     /**
      * Generates and returns a string representation of this deck.

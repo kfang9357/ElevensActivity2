@@ -14,5 +14,7 @@ public class DeckTester {
         String[] suits = {"red", "blue"};
         Deck deck = new Deck(ranks, suits, values);
         System.out.println(deck.toString());
+
+
     }
 }
